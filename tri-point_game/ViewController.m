@@ -30,6 +30,7 @@
         
     scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     
+    [triangle.imageView setContentMode:UIViewContentModeScaleAspectFit];
     
     rotationTracker = 1;
     
@@ -187,7 +188,7 @@
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
                      animations:^(void) {
-                         [gameOverView setCenter:CGPointMake(screenSize.width/2, screenSize.height/2 -50)];
+                        // [gameOverView setCenter:CGPointMake(screenSize.width/2, screenSize.height/2 -50)];
                      }
                      completion:^(BOOL finished) {
                      }
@@ -276,7 +277,7 @@
                      animations:^(void) {
                          
                          triangle.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees + 120));
-                         
+                         triangle.center = CGPointMake(screenSize.width/2, triangle.center.y);
                      }
                      completion:^(BOOL finished) {
                          
