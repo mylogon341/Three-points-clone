@@ -10,7 +10,6 @@
 		3C011F2019DC9D9C00DE27D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F1F19DC9D9C00DE27D4 /* main.m */; };
 		3C011F2319DC9D9C00DE27D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F2219DC9D9C00DE27D4 /* AppDelegate.m */; };
 		3C011F2619DC9D9C00DE27D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F2519DC9D9C00DE27D4 /* ViewController.m */; };
-		3C011F2919DC9D9C00DE27D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C011F2719DC9D9C00DE27D4 /* Main.storyboard */; };
 		3C011F2B19DC9D9C00DE27D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C011F2A19DC9D9C00DE27D4 /* Images.xcassets */; };
 		3C011F2E19DC9D9C00DE27D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C011F2C19DC9D9C00DE27D4 /* LaunchScreen.xib */; };
 		3C011F3A19DC9D9C00DE27D4 /* tri_point_gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F3919DC9D9C00DE27D4 /* tri_point_gameTests.m */; };
@@ -18,6 +17,7 @@
 		3C011F4E19DE08BF00DE27D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C011F4D19DE08BF00DE27D4 /* QuartzCore.framework */; };
 		3C011F5019DE0B3100DE27D4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C011F4F19DE0B3100DE27D4 /* Twitter.framework */; };
 		3C011F5219DE0B3700DE27D4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C011F5119DE0B3700DE27D4 /* Social.framework */; };
+		3C9D28D019DEF70D0083680F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C9D28CF19DEF70D0083680F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		3C011F2219DC9D9C00DE27D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3C011F2419DC9D9C00DE27D4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3C011F2519DC9D9C00DE27D4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3C011F2819DC9D9C00DE27D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3C011F2A19DC9D9C00DE27D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C011F2D19DC9D9C00DE27D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3C011F3319DC9D9C00DE27D4 /* tri-point_gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tri-point_gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +47,7 @@
 		3C011F4D19DE08BF00DE27D4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3C011F4F19DE0B3100DE27D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		3C011F5119DE0B3700DE27D4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		3C9D28CF19DEF70D0083680F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,7 @@
 				3C011F2219DC9D9C00DE27D4 /* AppDelegate.m */,
 				3C011F2419DC9D9C00DE27D4 /* ViewController.h */,
 				3C011F2519DC9D9C00DE27D4 /* ViewController.m */,
-				3C011F2719DC9D9C00DE27D4 /* Main.storyboard */,
+				3C9D28CF19DEF70D0083680F /* Main.storyboard */,
 				3C011F2A19DC9D9C00DE27D4 /* Images.xcassets */,
 				3C011F2C19DC9D9C00DE27D4 /* LaunchScreen.xib */,
 				3C011F1D19DC9D9C00DE27D4 /* Supporting Files */,
@@ -215,7 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C011F2919DC9D9C00DE27D4 /* Main.storyboard in Resources */,
+				3C9D28D019DEF70D0083680F /* Main.storyboard in Resources */,
 				3C011F2E19DC9D9C00DE27D4 /* LaunchScreen.xib in Resources */,
 				3C011F2B19DC9D9C00DE27D4 /* Images.xcassets in Resources */,
 			);
@@ -260,14 +260,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3C011F2719DC9D9C00DE27D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C011F2819DC9D9C00DE27D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3C011F2C19DC9D9C00DE27D4 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
