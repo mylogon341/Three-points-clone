@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <QuartzCore/QuartzCore.h>
 #define DEGREES_TO_RADIANS(x) (M_PI * (x) / 180.0)
 
 @interface ViewController ()
@@ -15,6 +16,11 @@
 @end
 
 @implementation ViewController
+
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +36,11 @@
         
     scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     
-    [triangle.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [triangle setCenter:CGPointMake(screenSize.width/2, screenSize.height - 250)];
+    
+    float yAnchor = 78.0f/230.0f;
+    
+    triangle.layer.anchorPoint = CGPointMake(0.5f, yAnchor);
     
     rotationTracker = 1;
     
@@ -51,9 +61,9 @@
     [self colourChange:second andMore:ball2Colour];
     [self colourChange:third andMore:ball3Colour];
     
-    [self.view insertSubview:first belowSubview:triangle];
-    [self.view insertSubview:second belowSubview:triangle];
-    [self.view insertSubview:third belowSubview:triangle];
+    [self.view insertSubview:first belowSubview:scoreLabel];
+    [self.view insertSubview:second belowSubview:scoreLabel];
+    [self.view insertSubview:third belowSubview:scoreLabel];
     
     gameOverView.layer.cornerRadius = 5;
     
@@ -271,13 +281,16 @@
             break;
     }
     
+    
+    
+    
     [UIView animateWithDuration:0.15
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
                      animations:^(void) {
                          
                          triangle.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees + 120));
-                         triangle.center = CGPointMake(screenSize.width/2, triangle.center.y);
+                        // triangle.center = CGPointMake(screenSize.width/2, triangle.center.y);
                      }
                      completion:^(BOOL finished) {
                          
