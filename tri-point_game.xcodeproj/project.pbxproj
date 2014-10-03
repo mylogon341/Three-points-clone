@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C011F2019DC9D9C00DE27D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F1F19DC9D9C00DE27D4 /* main.m */; };
+		3C011F2319DC9D9C00DE27D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F2219DC9D9C00DE27D4 /* AppDelegate.m */; };
+		3C011F2619DC9D9C00DE27D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F2519DC9D9C00DE27D4 /* ViewController.m */; };
+		3C011F2919DC9D9C00DE27D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C011F2719DC9D9C00DE27D4 /* Main.storyboard */; };
+		3C011F2B19DC9D9C00DE27D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C011F2A19DC9D9C00DE27D4 /* Images.xcassets */; };
+		3C011F2E19DC9D9C00DE27D4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3C011F2C19DC9D9C00DE27D4 /* LaunchScreen.xib */; };
+		3C011F3A19DC9D9C00DE27D4 /* tri_point_gameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C011F3919DC9D9C00DE27D4 /* tri_point_gameTests.m */; };
+		3C011F4C19DD2A8500DE27D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C011F4B19DD2A8500DE27D4 /* AudioToolbox.framework */; };
+		3C011F4E19DE08BF00DE27D4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C011F4D19DE08BF00DE27D4 /* QuartzCore.framework */; };
+		3C011F5019DE0B3100DE27D4 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C011F4F19DE0B3100DE27D4 /* Twitter.framework */; };
+		3C011F5219DE0B3700DE27D4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C011F5119DE0B3700DE27D4 /* Social.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C011F3419DC9D9C00DE27D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C011F1219DC9D9B00DE27D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C011F1919DC9D9B00DE27D4;
+			remoteInfo = "tri-point_game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C011F1A19DC9D9C00DE27D4 /* tri-point_game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tri-point_game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C011F1E19DC9D9C00DE27D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C011F1F19DC9D9C00DE27D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C011F2119DC9D9C00DE27D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3C011F2219DC9D9C00DE27D4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3C011F2419DC9D9C00DE27D4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3C011F2519DC9D9C00DE27D4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3C011F2819DC9D9C00DE27D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C011F2A19DC9D9C00DE27D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3C011F2D19DC9D9C00DE27D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3C011F3319DC9D9C00DE27D4 /* tri-point_gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tri-point_gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C011F3819DC9D9C00DE27D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C011F3919DC9D9C00DE27D4 /* tri_point_gameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tri_point_gameTests.m; sourceTree = "<group>"; };
+		3C011F4B19DD2A8500DE27D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3C011F4D19DE08BF00DE27D4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3C011F4F19DE0B3100DE27D4 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		3C011F5119DE0B3700DE27D4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C011F1719DC9D9B00DE27D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C011F5219DE0B3700DE27D4 /* Social.framework in Frameworks */,
+				3C011F5019DE0B3100DE27D4 /* Twitter.framework in Frameworks */,
+				3C011F4E19DE08BF00DE27D4 /* QuartzCore.framework in Frameworks */,
+				3C011F4C19DD2A8500DE27D4 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C011F3019DC9D9C00DE27D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C011F1119DC9D9B00DE27D4 = {
+			isa = PBXGroup;
+			children = (
+				3C011F5119DE0B3700DE27D4 /* Social.framework */,
+				3C011F4F19DE0B3100DE27D4 /* Twitter.framework */,
+				3C011F4D19DE08BF00DE27D4 /* QuartzCore.framework */,
+				3C011F4B19DD2A8500DE27D4 /* AudioToolbox.framework */,
+				3C011F1C19DC9D9C00DE27D4 /* tri-point_game */,
+				3C011F3619DC9D9C00DE27D4 /* tri-point_gameTests */,
+				3C011F1B19DC9D9C00DE27D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C011F1B19DC9D9C00DE27D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C011F1A19DC9D9C00DE27D4 /* tri-point_game.app */,
+				3C011F3319DC9D9C00DE27D4 /* tri-point_gameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C011F1C19DC9D9C00DE27D4 /* tri-point_game */ = {
+			isa = PBXGroup;
+			children = (
+				3C011F2119DC9D9C00DE27D4 /* AppDelegate.h */,
+				3C011F2219DC9D9C00DE27D4 /* AppDelegate.m */,
+				3C011F2419DC9D9C00DE27D4 /* ViewController.h */,
+				3C011F2519DC9D9C00DE27D4 /* ViewController.m */,
+				3C011F2719DC9D9C00DE27D4 /* Main.storyboard */,
+				3C011F2A19DC9D9C00DE27D4 /* Images.xcassets */,
+				3C011F2C19DC9D9C00DE27D4 /* LaunchScreen.xib */,
+				3C011F1D19DC9D9C00DE27D4 /* Supporting Files */,
+			);
+			path = "tri-point_game";
+			sourceTree = "<group>";
+		};
+		3C011F1D19DC9D9C00DE27D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C011F1E19DC9D9C00DE27D4 /* Info.plist */,
+				3C011F1F19DC9D9C00DE27D4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C011F3619DC9D9C00DE27D4 /* tri-point_gameTests */ = {
+			isa = PBXGroup;
+			children = (
+				3C011F3919DC9D9C00DE27D4 /* tri_point_gameTests.m */,
+				3C011F3719DC9D9C00DE27D4 /* Supporting Files */,
+			);
+			path = "tri-point_gameTests";
+			sourceTree = "<group>";
+		};
+		3C011F3719DC9D9C00DE27D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C011F3819DC9D9C00DE27D4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C011F1919DC9D9B00DE27D4 /* tri-point_game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C011F3D19DC9D9C00DE27D4 /* Build configuration list for PBXNativeTarget "tri-point_game" */;
+			buildPhases = (
+				3C011F1619DC9D9B00DE27D4 /* Sources */,
+				3C011F1719DC9D9B00DE27D4 /* Frameworks */,
+				3C011F1819DC9D9B00DE27D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tri-point_game";
+			productName = "tri-point_game";
+			productReference = 3C011F1A19DC9D9C00DE27D4 /* tri-point_game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C011F3219DC9D9C00DE27D4 /* tri-point_gameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C011F4019DC9D9C00DE27D4 /* Build configuration list for PBXNativeTarget "tri-point_gameTests" */;
+			buildPhases = (
+				3C011F2F19DC9D9C00DE27D4 /* Sources */,
+				3C011F3019DC9D9C00DE27D4 /* Frameworks */,
+				3C011F3119DC9D9C00DE27D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C011F3519DC9D9C00DE27D4 /* PBXTargetDependency */,
+			);
+			name = "tri-point_gameTests";
+			productName = "tri-point_gameTests";
+			productReference = 3C011F3319DC9D9C00DE27D4 /* tri-point_gameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C011F1219DC9D9B00DE27D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Luke Sadler";
+				TargetAttributes = {
+					3C011F1919DC9D9B00DE27D4 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					3C011F3219DC9D9C00DE27D4 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 3C011F1919DC9D9B00DE27D4;
+					};
+				};
+			};
+			buildConfigurationList = 3C011F1519DC9D9B00DE27D4 /* Build configuration list for PBXProject "tri-point_game" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C011F1119DC9D9B00DE27D4;
+			productRefGroup = 3C011F1B19DC9D9C00DE27D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C011F1919DC9D9B00DE27D4 /* tri-point_game */,
+				3C011F3219DC9D9C00DE27D4 /* tri-point_gameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C011F1819DC9D9B00DE27D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C011F2919DC9D9C00DE27D4 /* Main.storyboard in Resources */,
+				3C011F2E19DC9D9C00DE27D4 /* LaunchScreen.xib in Resources */,
+				3C011F2B19DC9D9C00DE27D4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C011F3119DC9D9C00DE27D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C011F1619DC9D9B00DE27D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C011F2619DC9D9C00DE27D4 /* ViewController.m in Sources */,
+				3C011F2319DC9D9C00DE27D4 /* AppDelegate.m in Sources */,
+				3C011F2019DC9D9C00DE27D4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C011F2F19DC9D9C00DE27D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C011F3A19DC9D9C00DE27D4 /* tri_point_gameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C011F3519DC9D9C00DE27D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C011F1919DC9D9B00DE27D4 /* tri-point_game */;
+			targetProxy = 3C011F3419DC9D9C00DE27D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3C011F2719DC9D9C00DE27D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C011F2819DC9D9C00DE27D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3C011F2C19DC9D9C00DE27D4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C011F2D19DC9D9C00DE27D4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C011F3B19DC9D9C00DE27D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3C011F3C19DC9D9C00DE27D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C011F3E19DC9D9C00DE27D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "tri-point_game/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3C011F3F19DC9D9C00DE27D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "tri-point_game/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3C011F4119DC9D9C00DE27D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "tri-point_gameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tri-point_game.app/tri-point_game";
+			};
+			name = Debug;
+		};
+		3C011F4219DC9D9C00DE27D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "tri-point_gameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tri-point_game.app/tri-point_game";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C011F1519DC9D9B00DE27D4 /* Build configuration list for PBXProject "tri-point_game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C011F3B19DC9D9C00DE27D4 /* Debug */,
+				3C011F3C19DC9D9C00DE27D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C011F3D19DC9D9C00DE27D4 /* Build configuration list for PBXNativeTarget "tri-point_game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C011F3E19DC9D9C00DE27D4 /* Debug */,
+				3C011F3F19DC9D9C00DE27D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3C011F4019DC9D9C00DE27D4 /* Build configuration list for PBXNativeTarget "tri-point_gameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C011F4119DC9D9C00DE27D4 /* Debug */,
+				3C011F4219DC9D9C00DE27D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C011F1219DC9D9B00DE27D4 /* Project object */;
+}
