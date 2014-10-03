@@ -188,7 +188,7 @@
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
                      animations:^(void) {
-                        // [gameOverView setCenter:CGPointMake(screenSize.width/2, screenSize.height/2 -50)];
+                         [gameOverView setCenter:CGPointMake(screenSize.width/2, screenSize.height/2 -50)];
                      }
                      completion:^(BOOL finished) {
                      }
