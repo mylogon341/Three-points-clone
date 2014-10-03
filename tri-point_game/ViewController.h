@@ -25,6 +25,9 @@
     
     float fallSpeed;
     
+    BOOL dead;
+    BOOL deadReverse;
+    
     NSTimer *timer;
     NSTimer *fallTimer;
     

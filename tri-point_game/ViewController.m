@@ -18,12 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    dead = NO;
+    deadReverse = NO;
+    
     // Do any additional setup after loading the view, typically from a nib.
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     screenSize = screenBound.size;
     score = 0;
-    
+        
     scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     
     
@@ -94,10 +98,18 @@
 
 -(void)fallMovement{
     
+    if (dead && !deadReverse) {
+        fallSpeed -= 0.2;
+    }
+    
+    if (fallSpeed <= 0) {
+        fallSpeed = -1;
+    }
+    
      first.center = CGPointMake(startPoint.x, first.center.y + fallSpeed);
     second.center = CGPointMake(secondStart.x, second.center.y + fallSpeed);
      third.center = CGPointMake(thirdStart.x, third.center.y + fallSpeed);
-    
+    if (!dead) {
     if (CGRectIntersectsRect(first.frame, collLabel.frame)) {
         if (rotationTracker != ball1Colour) {
             
@@ -160,7 +172,7 @@
         
         
     }
-    
+    }
     scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     
 }
@@ -168,8 +180,9 @@
 -(void)gameOver{
     
     triangle.enabled = NO;
-    fallSpeed = -0.2;
 
+    dead = YES;
+    
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
