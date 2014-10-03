@@ -75,10 +75,6 @@
 		3C011F1119DC9D9B00DE27D4 = {
 			isa = PBXGroup;
 			children = (
-				3C011F5119DE0B3700DE27D4 /* Social.framework */,
-				3C011F4F19DE0B3100DE27D4 /* Twitter.framework */,
-				3C011F4D19DE08BF00DE27D4 /* QuartzCore.framework */,
-				3C011F4B19DD2A8500DE27D4 /* AudioToolbox.framework */,
 				3C011F1C19DC9D9C00DE27D4 /* tri-point_game */,
 				3C011F3619DC9D9C00DE27D4 /* tri-point_gameTests */,
 				3C011F1B19DC9D9C00DE27D4 /* Products */,
@@ -112,6 +108,10 @@
 		3C011F1D19DC9D9C00DE27D4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C011F5119DE0B3700DE27D4 /* Social.framework */,
+				3C011F4F19DE0B3100DE27D4 /* Twitter.framework */,
+				3C011F4D19DE08BF00DE27D4 /* QuartzCore.framework */,
+				3C011F4B19DD2A8500DE27D4 /* AudioToolbox.framework */,
 				3C011F1E19DC9D9C00DE27D4 /* Info.plist */,
 				3C011F1F19DC9D9C00DE27D4 /* main.m */,
 			);
@@ -430,6 +430,7 @@
 				3C011F3F19DC9D9C00DE27D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C011F4019DC9D9C00DE27D4 /* Build configuration list for PBXNativeTarget "tri-point_gameTests" */ = {
 			isa = XCConfigurationList;
@@ -438,6 +439,7 @@
 				3C011F4219DC9D9C00DE27D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
