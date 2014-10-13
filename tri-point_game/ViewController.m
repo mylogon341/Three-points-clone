@@ -9,7 +9,15 @@
 #import "ViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <QuartzCore/QuartzCore.h>
+#import "GADBannerView.h"
+#import "GADRequest.h"
+#import "MylogonAudio.h"
+
 #define DEGREES_TO_RADIANS(x) (M_PI * (x) / 180.0)
+
+//Start and accelerations values
+#define initialFallSpeed 5.0f;
+#define increaseInSpeed 0.2f;
 
 @interface ViewController ()
 
@@ -25,50 +33,98 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+#warning insert your own unique GAD ID
+    self.bannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
+    self.bannerView.rootViewController = self;
+    
+    
+    //Make sure game over view is off the screen
+    [gameOverView setCenter:CGPointMake(-200, screenSize.height/2)];
+    
+    GADRequest *request = [GADRequest request];
+    // Enable test ads on simulators.
+    request.testDevices = @[ GAD_SIMULATOR_ID ];
+    [self.bannerView loadRequest:request];
+    
+    //Setup 'Share' and 'Reset' buttons to highlights on selection
+    [restartButton setImage:[UIImage imageNamed:@"restart_pressed"] forState:UIControlStateSelected | UIControlStateHighlighted];
+    [shareButton setImage:[UIImage imageNamed:@"share_pressed"] forState:UIControlStateSelected | UIControlStateHighlighted];
+    
     dead = NO;
     deadReverse = NO;
+    rotationTracker = 1;
     
-    // Do any additional setup after loading the view, typically from a nib.
+    [self highscores];
     
     CGRect screenBound = [[UIScreen mainScreen] bounds];
     screenSize = screenBound.size;
     score = 0;
-        
+
+    //This is the score label. If a suffix is required, change to '%d Points' etc.
     scoreLabel.text = [NSString stringWithFormat:@"%d",score];
+    [scoreLabel setCenter:CGPointMake(screenSize.width/2, 45)];
     
-    [triangle setCenter:CGPointMake(screenSize.width/2, screenSize.height - 250)];
+    //Set location, scale and offset anchor point of triangle to rotate around apex
+    if (screenSize.height == 480) {
+        [triangle setCenter:CGPointMake(screenSize.width/2, (screenSize.height/9)*6.5)];
+
+    }else{
+        [triangle setCenter:CGPointMake(screenSize.width/2, (screenSize.height/9)*7)];
+
+    }
+
+    float scale = screenSize.width/320;
+    
+    if (scale > 1.75) {
+        scale = 1.75;
+    }
+
+    [triangle setFrame:CGRectMake(triangle.center.x - (137 * scale)/2, triangle.center.y - (121 * scale)/2, 137 * scale, 121 * scale)];
     
     float yAnchor = 78.0f/230.0f;
-    
     triangle.layer.anchorPoint = CGPointMake(0.5f, yAnchor);
     
-    rotationTracker = 1;
     
+    //30fps -- 1/30 = 0.03
     timer = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(fallMovement) userInfo:nil repeats:YES];
     
-     startPoint = CGPointMake(screenSize.width/2, -40);
-    secondStart = CGPointMake(screenSize.width/2, -240);
-     thirdStart = CGPointMake(screenSize.width/2, -440);
+    float ballHeights = -screenSize.height/3;
+    
+    startPoint = CGPointMake(screenSize.width/2, -240);
+    
+    float ballSize = 40 * scale;
     
     
-     first = [[UIImageView alloc] initWithFrame:CGRectMake(startPoint.x, startPoint.y , 40, 40)];
+    //Initialise balls
+    first = [[UIImageView alloc] initWithFrame:CGRectMake(startPoint.x, startPoint.y , ballSize, ballSize)];
+    second = [[UIImageView alloc] initWithFrame:CGRectMake(screenSize.width/2, -40, ballSize, ballSize)];
+    third = [[UIImageView alloc] initWithFrame:CGRectMake(screenSize.width/2, -440, ballSize, ballSize)];
     
-    second = [[UIImageView alloc] initWithFrame:CGRectMake(startPoint.x, secondStart.y, 40, 40)];
+    //Centre on screen
+    [first setCenter:CGPointMake(screenSize.width/2, ballHeights)];
+    [second setCenter:CGPointMake(screenSize.width/2, ballHeights * 2)];
+    [third setCenter:CGPointMake(screenSize.width/2, ballHeights *3)];
     
-     third = [[UIImageView alloc] initWithFrame:CGRectMake(startPoint.x, thirdStart.y, 40, 40)];
-    
+    //Set ball colours
     [self colourChange:first andMore:ball1Colour];
     [self colourChange:second andMore:ball2Colour];
     [self colourChange:third andMore:ball3Colour];
     
+    //Insert balls
     [self.view insertSubview:first belowSubview:scoreLabel];
     [self.view insertSubview:second belowSubview:scoreLabel];
     [self.view insertSubview:third belowSubview:scoreLabel];
     
     gameOverView.layer.cornerRadius = 5;
     
-    fallSpeed = 5;
+    //Admob banner
+    [_bannerView setCenter:CGPointMake(screenSize.width/2, screenSize.height-25)];
     
+    //Make sure collision is in correct location
+    [collLabel setCenter:triangle.center];
+    
+    fallSpeed = initialFallSpeed;
     
     //  Ball colour
     //  1 = yellow
@@ -82,6 +138,7 @@
     
     ballNumber = arc4random() %3 +1;
     
+    //Sets colour of balls. These are image titles that are in 'Images.xcassets'
     switch (ballNumber) {
         case 1:
             [ballIV setImage:[UIImage imageNamed:@"yellow"]];
@@ -117,98 +174,132 @@
         fallSpeed = -1;
     }
     
-     first.center = CGPointMake(startPoint.x, first.center.y + fallSpeed);
-    second.center = CGPointMake(secondStart.x, second.center.y + fallSpeed);
-     third.center = CGPointMake(thirdStart.x, third.center.y + fallSpeed);
+    first.center = CGPointMake(startPoint.x, first.center.y + fallSpeed);
+    second.center = CGPointMake(second.center.x, second.center.y + fallSpeed);
+    third.center = CGPointMake(third.center.x, third.center.y + fallSpeed);
     if (!dead) {
-    if (CGRectIntersectsRect(first.frame, collLabel.frame)) {
-        if (rotationTracker != ball1Colour) {
-            
-            //Death
-            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-            //fallSpeed = 0;
-            first.hidden = YES;
-            
-            [self gameOver];
-            
-        }else{
-            
-            //Winning
-            score ++;
-            fallSpeed += 0.2;
-            first.center = secondStart;
-            [self colourChange:first andMore:ball1Colour];
-        }
-    }
-    
-    if (CGRectIntersectsRect(second.frame, collLabel.frame)) {
-        if (rotationTracker != ball2Colour) {
-            
-            //Death
-            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-          //  fallSpeed = 0;
-            second.hidden = YES;
-            [self gameOver];
-            
-        }else{
-            
-            //Winning
-            score ++;
-            fallSpeed += 0.2;
-            second.center = secondStart;
-            [self colourChange:second andMore:ball2Colour];
-            
-        }
-    }
-    
-    if (CGRectIntersectsRect(third.frame, collLabel.frame)) {
-        if (rotationTracker != ball3Colour) {
-            
-            //Death
-            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
-          //  fallSpeed = 0;
-            third.hidden = YES;
-            [self gameOver];
-            
-        }else{
-            
-            //Winning
-            score ++;
-            fallSpeed += 0.2;
-            third.center = secondStart;
-            [self colourChange:third andMore:ball3Colour];
-            
+        if (CGRectIntersectsRect(first.frame, collLabel.frame)) {
+            if (rotationTracker != ball1Colour) {
+                
+                //Death
+                first.hidden = YES;
+                
+                [self gameOver];
+                
+            }else{
+                
+                //Winning
+                score ++;
+                fallSpeed += increaseInSpeed;
+                first.center = startPoint;
+                [self colourChange:first andMore:ball1Colour];
+                [self playPop];
+            }
         }
         
+        if (CGRectIntersectsRect(second.frame, collLabel.frame)) {
+            if (rotationTracker != ball2Colour) {
+                
+                //Death
+                second.hidden = YES;
+                [self gameOver];
+                
+            }else{
+                
+                //Winning
+                score ++;
+                fallSpeed += increaseInSpeed;
+                second.center = startPoint;
+                [self colourChange:second andMore:ball2Colour];
+                [self playPop];
+                
+            }
+        }
         
-        
-    }
+        if (CGRectIntersectsRect(third.frame, collLabel.frame)) {
+            if (rotationTracker != ball3Colour) {
+                
+                //Death
+                //  fallSpeed = 0;
+                third.hidden = YES;
+                [self gameOver];
+                
+            }else{
+                
+                //Winning
+                score ++;
+                fallSpeed += increaseInSpeed;
+                third.center = startPoint;
+                [self colourChange:third andMore:ball3Colour];
+                [self playPop];
+            }
+            
+            
+            
+        }
     }
     scoreLabel.text = [NSString stringWithFormat:@"%d",score];
     
 }
 
+-(void)playPop{
+#warning optionally replace 'pop' sound
+    
+    [[MylogonAudio sharedInstance]playSoundEffect:@"pop.mp3"];
+    
+}
+
 -(void)gameOver{
     
-    triangle.enabled = NO;
-
     dead = YES;
+    
+    if (score > highScoreInt) {
+        highScore.text = [NSString stringWithFormat:@"Highscore: %ld",highScoreInt];
+        [self highscores];
+    }
+    
+    triangle.enabled = NO;
+    
     
     [UIView animateWithDuration:1.0
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
                      animations:^(void) {
-                         [gameOverView setCenter:CGPointMake(screenSize.width/2, screenSize.height/2 -50)];
+                         [gameOverView setCenter:CGPointMake(screenSize.width/2, screenSize.height/2)];
+                         [gameOverView setAlpha:1];
                      }
                      completion:^(BOOL finished) {
                      }
      ];
     
 }
+
+-(void)highscores{
+    
+    if (!dead) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        highScoreInt = [defaults integerForKey:@"highscore"];
+        
+    }else{
+        
+        highScoreInt = score;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        [defaults setInteger:highScoreInt forKey:@"highscore"];
+        [defaults synchronize];
+    }
+    
+    highScore.text = [NSString stringWithFormat:@"Highscore: %ld",highScoreInt];
+    
+}
+
+
 -(IBAction)restart{
-
-    [self performSegueWithIdentifier:@"restart" sender:nil];
-
+    
+    // [self performSegueWithIdentifier:@"restart" sender:nil];
+    
+    [self viewDidLoad];
+    
 }
 
 
@@ -226,7 +317,7 @@
                 //  This means the user cancelled without sending the Tweet
             case SLComposeViewControllerResultDone:
             {
-              
+                
                 
                 break;}
                 //  This means the user hit 'Send'
@@ -284,18 +375,16 @@
     
     
     
-    [UIView animateWithDuration:0.15
+    [UIView animateWithDuration:0.1
                           delay:0.0
                         options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
                      animations:^(void) {
                          
                          triangle.transform = CGAffineTransformMakeRotation(DEGREES_TO_RADIANS(degrees + 120));
-                        // triangle.center = CGPointMake(screenSize.width/2, triangle.center.y);
                      }
                      completion:^(BOOL finished) {
-                         
+
                      }
-     
      ];
     
 }

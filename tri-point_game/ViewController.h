@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <Twitter/Twitter.h>
+@class GADBannerView;
 
 @interface ViewController : UIViewController
 {
@@ -16,6 +17,9 @@
     IBOutlet UILabel *scoreLabel;
     IBOutlet UILabel *collLabel;
     IBOutlet UIView *gameOverView;
+    
+    IBOutlet UIButton *restartButton;
+    IBOutlet UIButton *shareButton;
 
     int rotationTracker;
     int score;
@@ -23,25 +27,29 @@
     int ball2Colour;
     int ball3Colour;
     
+    long int highScoreInt;
+    
     float fallSpeed;
     
     BOOL dead;
     BOOL deadReverse;
     
+    __weak IBOutlet UILabel *highScore;
+
     NSTimer *timer;
     NSTimer *fallTimer;
-    
-    
+ 
     CGPoint startPoint;
-    CGPoint secondStart;
-    CGPoint thirdStart;
-    
+ 
     CGSize screenSize;
     
     UIImageView *first;
     UIImageView *second;
     UIImageView *third;
+    
+    
 }
+@property (weak, nonatomic) IBOutlet GADBannerView  *bannerView;
 
 @end
 
